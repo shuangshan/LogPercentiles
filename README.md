@@ -9,6 +9,13 @@ log format :
 3. build application : ./gradlew clean build
 4. cd build/lib
 5. java -jar LogPercentiles-1.0.0.jar build/resources/test/2018-13-10.log build/resources/test/2018-12-10.log 60,95,98
+6. output of application:
+>98% of requests return a response within 21226ms
+
+>60% of requests return a response within 1310ms
+
+>95% of requests return a response within 12310ms
+
 
 ### sort algorithm choose
 test case use 11 int array for sorting
