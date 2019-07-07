@@ -1,8 +1,12 @@
 The tools for calculate certain log file time cost percentiles.
 
 ### Usage
-log format :
+calculate the time cost percentiles from log files with format
 10.2.3.4 [2018/13/10:14:02:39] "GET /api/playeritems?playerId=3" 200 1230
+
+### Time-complexity and space-complexity
+Using quick sort algorithm , average time complexity O(n log(n)), space complexity O(log n)
+
 ### How to build
 1. install jdk1.8, git, idea, gradle
 2. git clone https://github.com/shuangshan/LogPercentiles.git
