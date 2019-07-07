@@ -1,5 +1,3 @@
-package com.css;
-
 import java.util.function.Function;
 
 /**

@@ -1,5 +1,3 @@
-package com.css;
-
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,10 +19,10 @@ public class Main {
 
     public static void main(String[] args) {
         if (args.length < ARGS_NUMBER) {
-            System.out.println("USAGE: LogPercentiles LogFilePath PercentagesToCal \n" +
+            System.out.println("USAGE: java -jar LogPercentiles-1.0.0.jar LogFilePath PercentagesToCal \n" +
                     "LogFilePath: /var/log/httpd/2018-13-10.log,/var/log/httpd/2018-12-10.log,/var/log/httpd/2018-11-10.log\n" +
                     "PercentagesToCal: 90,95,99\n\n" +
-                    "LogPercentiles /var/log/httpd/2018-13-10.log,/var/log/httpd/2018-12-10.log,/var/log/httpd/2018-11-10.log 90,95,99");
+                    "java -jar LogPercentiles-1.0.0.jar /var/log/httpd/2018-13-10.log,/var/log/httpd/2018-12-10.log,/var/log/httpd/2018-11-10.log 90,95,99");
             return;
         }
 

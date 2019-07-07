@@ -1,4 +1,3 @@
-package com.css;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
@@ -19,10 +18,8 @@ public class SortAlgorithm {
 
 
     /**
-     * @Author chang shuangshan
-     * @Description bubble sort for int array, Average time complexity O(n*n), space complexity
-     * O(1)
-     * @Date 11:26 2019/7/7
+     * bubble sort for int array, Average time complexity O(n*n), space complexity O(1)
+     *
      * @Param {@link int[]}
      * @Return {@link int[]}
      **/
@@ -50,10 +47,8 @@ public class SortAlgorithm {
     }
 
     /**
-     * @Author chang shuangshan
-     * @Description quick sort for int array, Average time complexity O(n log(n)), space complexity
-     * O(log n)
-     * @Date 11:26 2019/7/7
+     * quick sort for int array, Average time complexity O(n log(n)), space complexity O(log n)
+     *
      * @Param {@link int[]}
      * @Return {@link int[]}
      **/
@@ -91,9 +86,7 @@ public class SortAlgorithm {
     }
 
     /**
-     * @Author chang shuangshan
      * @Description use JDK8 stream sorted for testing
-     * @Date 11:26 2019/7/7
      * @Param {@link int[]}
      * @Return {@link int[]}
      **/

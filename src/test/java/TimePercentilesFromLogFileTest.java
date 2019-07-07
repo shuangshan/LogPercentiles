@@ -1,7 +1,3 @@
-package com.css.test;
-
-import com.css.TimePercentilesFromLogFile;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
@@ -17,7 +13,7 @@ class TimePercentilesFromLogFileTest {
     @Test
     void timePercentilesTest() {
         System.out.println(rootPath);
-        String[] logFileNames = new String[]{rootPath + "/resources/2018-13-10.log", rootPath + "/resources/2018-12-10.log", rootPath + "/resources/2018-11-10.log"};
+        String[] logFileNames = new String[]{rootPath + "/../resources/2018-13-10.log", rootPath + "/../resources/2018-12-10.log", rootPath + "/../resources/2018-11-10.log"};
         Integer[] pecentages = new Integer[]{90, 95, 100};
         Map<Integer, Integer> result = timePercentilesFromLogFile.timePercentiles(logFileNames, pecentages);
         assertEquals(result.get(90).intValue(), 4630);
