@@ -3,10 +3,10 @@ package com.css;
 import java.util.function.Function;
 
 /**
- * @author
- * @create 2019-07-0716:56
- * @email
- * @description
+ * @author shuangshan
+ * @create 2019-07-0714:01
+ * @email 13690578@qq.com
+ * @description catch exception for non-exception catch functions.
  */
 @FunctionalInterface
 public interface ThrowingFunction<T, R> extends Function<T, R> {

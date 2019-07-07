@@ -1,8 +1,0 @@
-10.2.3.4 [2018/12/10:14:02:39] "GET /api/playeritems?playerId=3" 200 12210
-10.3.4.5 [2018/12/10:14:02:41] "GET /api/playeritems?playerId=2" 200 4230
-10.2.3.4 [2018/12/10:14:02:39] "GET /api/playeritems?playerId=3" 200 3130
-10.2.3.4 [2018/12/10:14:02:39] "GET /api/playeritems?playerId=3" 200 25630
-10.2.3.4 [2018/12/10:14:02:39] "GET /api/playeritems?playerId=3" 200 1310
-10.2.3.4 [2018/12/10:14:02:39] "GET /api/playeritems?playerId=3" 200 12260
-10.2.3.4 [2018/12/10:14:02:39] "GET /api/playeritems?playerId=3" 200 1212
-10.2.3.4 [2018/12/10:14:02:39] "GET /api/playeritems?playerId=3" 200 121223

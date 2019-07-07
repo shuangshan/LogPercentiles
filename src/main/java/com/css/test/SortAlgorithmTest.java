@@ -16,19 +16,19 @@ class SortAlgorithmTest {
     }
 
     @Test
-    void bubbleSort() {
+    void bubbleSortTest() {
         int[] tmpArray = SortAlgorithm.bubbleSort(sourceArray);
         assertArrayEquals(expectArray, tmpArray);
     }
 
     @Test
-    void quickSort() {
+    void quickSortTest() {
         int[] tmpArray = SortAlgorithm.quickSort(sourceArray);
         assertArrayEquals(expectArray, tmpArray);
     }
 
     @Test
-    void streamSort() {
+    void streamSortTest() {
         int[] tmpArray = SortAlgorithm.streamSort(sourceArray);
         assertArrayEquals(expectArray, tmpArray);
     }
