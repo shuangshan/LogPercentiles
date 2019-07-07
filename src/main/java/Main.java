@@ -28,17 +28,17 @@ public class Main {
 
         // check args correct
         // 1. file exist
-        String[] splitFiles = pattern.split(args[1]);
+        String[] splitFiles = pattern.split(args[0]);
         for (String fileName : splitFiles) {
             Path path = Paths.get(fileName);
             if (Files.notExists(path)) {
                 System.out.println(path + " do not exists");
-                break;
+                return;
             }
         }
 
         // 2. percentage between 0-100 and all is integer.
-        String[] percentages = pattern.split(args[2]);
+        String[] percentages = pattern.split(args[1]);
         for (String pert : percentages) {
             Integer pertInt = Integer.valueOf(pert);
             if (pertInt > 100 || pertInt < 0) {
@@ -50,7 +50,7 @@ public class Main {
         TimePercentilesFromLogFile timePercentilesFromLogFile = new TimePercentilesFromLogFile();
         Map<Integer, Integer> pertMap = timePercentilesFromLogFile.timePercentiles(splitFiles, Arrays.stream(percentages).map(Integer::parseInt).toArray(Integer[]::new));
         for (Map.Entry<Integer, Integer> entry : pertMap.entrySet()) {
-            System.out.println(entry.getKey() + "% of requests return a response within " + entry.getValue() + "ms\n");
+            System.out.println(entry.getKey() + "% of requests return a response within " + entry.getValue() + " ms");
         }
 
     }

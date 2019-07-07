@@ -10,18 +10,18 @@ log format :
 4. cd build/lib
 5. java -jar LogPercentiles-1.0.0.jar build/resources/test/2018-13-10.log build/resources/test/2018-12-10.log 60,95,98
 6. output of application:
->98% of requests return a response within 21226ms
+>98% of requests return a response within 21226 ms
 
->60% of requests return a response within 1310ms
+>60% of requests return a response within 1310 ms
 
->95% of requests return a response within 12310ms
+>95% of requests return a response within 12310 ms
 
 
-### sort algorithm choose
+### Sort algorithm compare
 test case use 11 int array for sorting
-* bubble sort need 27ms 
-* quick sort only need 1ms 
-* stream sort need 14ms
+* bubble sort need 27 ms 
+* quick sort only need 1 ms 
+* stream sort need 14 ms
 -----------------
 obviously ***quick sort*** is a good choice.
 
