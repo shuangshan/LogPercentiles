@@ -10,6 +10,7 @@ class TimePercentilesFromLogFileTest {
 
     TimePercentilesFromLogFile timePercentilesFromLogFile = new TimePercentilesFromLogFile();
 
+    
     @Test
     void timePercentilesTest() {
         System.out.println(rootPath);

@@ -25,4 +25,11 @@ public class SortAlgorithmTest {
         int[] tmpArray = SortAlgorithm.streamSort(sourceArray);
         assertArrayEquals(expectArray, tmpArray);
     }
+
+    @Test
+    public void bucketSortTest() {
+        int[] tmpArray = SortAlgorithm.bubbleSort(sourceArray);
+        assertArrayEquals(expectArray, tmpArray);
+    }
+
 }
