@@ -1,18 +1,18 @@
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-class TimePercentilesFromLogFileTest {
+public class TimePercentilesFromLogFileTest {
     String rootPath = this.getClass().getResource("").getPath().toString();
 
     TimePercentilesFromLogFile timePercentilesFromLogFile = new TimePercentilesFromLogFile();
 
-    
+
     @Test
-    void timePercentilesTest() {
+    public void timePercentilesTest() {
         System.out.println(rootPath);
         String[] logFileNames = new String[]{rootPath + "/../resources/2018-13-10.log", rootPath + "/../resources/2018-12-10.log", rootPath + "/../resources/2018-11-10.log"};
         Integer[] pecentages = new Integer[]{90, 95, 100};
@@ -23,7 +23,7 @@ class TimePercentilesFromLogFileTest {
     }
 
     @Test
-    void getTimeCostFromLineTest() {
+    public void getTimeCostFromLineTest() {
         String logLine = "10.2.3.4 [2018/13/10:14:02:39] \"GET /api/playeritems?playerId=3\" 200 12360";
         int timeCost = timePercentilesFromLogFile.getTimeCostFromLine(logLine);
         assertEquals(12360, timeCost);
