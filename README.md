@@ -5,7 +5,7 @@ calculate the time cost percentiles from log files with format
 10.2.3.4 [2018/13/10:14:02:39] "GET /api/playeritems?playerId=3" 200 1230
 
 ### Time-complexity and space-complexity
-Using bucket sort algorithm , average time complexity O(n), space complexity O(n)
+Using quick sort algorithm , average time complexity O(n logn), space complexity O(n logn)
 
 ### How to build
 1. install jdk1.8, git, idea, gradle
