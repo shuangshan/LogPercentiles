@@ -25,10 +25,10 @@ Using bucket sort algorithm , average time complexity O(n), space complexity O(n
 test case use 11 int array for sorting
 * bubble sort need 27 ms 
 * quick sort need 1 ms 
-* stream sort need 14 ms
-* bucket sort need 1 ms
+* stream sort need 94 ms
+* bucket sort need 7 ms
 -----------------
-obviously ***bucket sort*** is a good choice.
+from test ***quick sort*** is a better choice.
 
 ### Support version
 Develop/test on JDK8.

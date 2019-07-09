@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
  * @email 13690578@qq.com
  * @description The major sort algorithm for int. After test, 1. bubble sort need 27ms to finish the
  * test case 2. quick sort only need 1ms finish 11 int sort, 3. jdk8 stream sort need 14ms finish 11
- * 4. bucket sort have same time with quick sort , but bucket sort have better time complexity
+ * 4. bucket sort use 15ms , so from test result quick sort is better choice.
  */
 public class SortAlgorithm {
 
@@ -133,7 +133,7 @@ public class SortAlgorithm {
                 continue;
             }
             // use insert sort to sort bucket
-            bucket = insertSort(bucket);
+            bucket = quickSort(bucket);
             for (int value : bucket) {
                 arr[arrIndex++] = value;
             }
@@ -148,25 +148,6 @@ public class SortAlgorithm {
     private static int[] arrAppend(int[] arr, int value) {
         arr = Arrays.copyOf(arr, arr.length + 1);
         arr[arr.length - 1] = value;
-        return arr;
-    }
-
-    public static int[] insertSort(int[] sourceArray) {
-        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
-
-        for (int i = 1; i < arr.length; i++) {
-            int tmp = arr[i];
-            int j = i;
-            while (j > 0 && tmp < arr[j - 1]) {
-                arr[j] = arr[j - 1];
-                j--;
-            }
-
-            if (j != i) {
-                arr[j] = tmp;
-            }
-
-        }
         return arr;
     }
 
