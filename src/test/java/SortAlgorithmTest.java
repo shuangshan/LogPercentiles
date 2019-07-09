@@ -14,6 +14,7 @@ public class SortAlgorithmTest {
         assertArrayEquals(expectArray, tmpArray);
     }
 
+
     @Test
     public void quickSortTest() {
         int[] tmpArray = SortAlgorithm.quickSort(sourceArray);
@@ -28,7 +29,7 @@ public class SortAlgorithmTest {
 
     @Test
     public void bucketSortTest() {
-        int[] tmpArray = SortAlgorithm.bubbleSort(sourceArray);
+        int[] tmpArray = SortAlgorithm.bucketSort(sourceArray);
         assertArrayEquals(expectArray, tmpArray);
     }
 

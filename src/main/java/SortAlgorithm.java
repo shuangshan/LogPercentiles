@@ -1,5 +1,3 @@
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
@@ -9,7 +7,7 @@ import java.util.stream.IntStream;
  * @email 13690578@qq.com
  * @description The major sort algorithm for int. After test, 1. bubble sort need 27ms to finish the
  * test case 2. quick sort only need 1ms finish 11 int sort, 3. jdk8 stream sort need 14ms finish 11
- * int sort, so obviously quick sort is good choice
+ * 4. bucket sort have same time with quick sort , but bucket sort have better time complexity
  */
 public class SortAlgorithm {
 
@@ -99,46 +97,77 @@ public class SortAlgorithm {
 
 
     /**
-     * bucket sort, time complexity O(), space complexity O(n)
+     * bucket sort, time complexity O(n), space complexity O(n)
      */
-    public static ArrayList<Integer> BucketSort(ArrayList<Integer> array, int bucketSize) {
-        if (array == null || array.size() < 2) {
-            return array;
+    public static int[] bucketSort(int[] sourceArray) {
+        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
+
+        if (arr.length == 0) {
+            return arr;
         }
-        int max = array.get(0), min = array.get(0);
-        // locate max min value
-        for (int i = 0; i < array.size(); i++) {
-            if (array.get(i) > max) {
-                max = array.get(i);
-            }
-            if (array.get(i) < min) {
-                min = array.get(i);
-            }
-        }
-        int bucketCount = (max - min) / bucketSize + 1;
-        ArrayList<ArrayList<Integer>> bucketArr = new ArrayList<>(bucketCount);
-        ArrayList<Integer> resultArr = new ArrayList<>();
-        for (int i = 0; i < bucketCount; i++) {
-            bucketArr.add(new ArrayList<Integer>());
-        }
-        for (int i = 0; i < array.size(); i++) {
-            bucketArr.get((array.get(i) - min) / bucketSize).add(array.get(i));
-        }
-        for (int i = 0; i < bucketCount; i++) {
-            // if have duplicate number in the sort array
-            if (bucketSize == 1) {
-                for (int j = 0; j < bucketArr.get(i).size(); j++) {
-                    resultArr.add(bucketArr.get(i).get(j));
-                }
-            } else {
-                if (bucketCount == 1) {
-                    bucketSize--;
-                }
-                ArrayList<Integer> temp = BucketSort(bucketArr.get(i), bucketSize);
-                for (int j = 0; j < temp.size(); j++)
-                    resultArr.add(temp.get(j));
+        // set bucket size if 5
+        int bucketSize = 5;
+
+        int minValue = arr[0];
+        int maxValue = arr[0];
+        for (int value : arr) {
+            if (value < minValue) {
+                minValue = value;
+            } else if (value > maxValue) {
+                maxValue = value;
             }
         }
-        return resultArr;
+
+        int bucketCount = (int) Math.floor((maxValue - minValue) / bucketSize) + 1;
+        int[][] buckets = new int[bucketCount][0];
+
+        //
+        for (int i = 0; i < arr.length; i++) {
+            int index = (int) Math.floor((arr[i] - minValue) / bucketSize);
+            buckets[index] = arrAppend(buckets[index], arr[i]);
+        }
+
+        int arrIndex = 0;
+        for (int[] bucket : buckets) {
+            if (bucket.length <= 0) {
+                continue;
+            }
+            // use insert sort to sort bucket
+            bucket = insertSort(bucket);
+            for (int value : bucket) {
+                arr[arrIndex++] = value;
+            }
+        }
+
+        return arr;
     }
+
+    /**
+     * auto extend
+     */
+    private static int[] arrAppend(int[] arr, int value) {
+        arr = Arrays.copyOf(arr, arr.length + 1);
+        arr[arr.length - 1] = value;
+        return arr;
+    }
+
+    public static int[] insertSort(int[] sourceArray) {
+        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
+
+        for (int i = 1; i < arr.length; i++) {
+            int tmp = arr[i];
+            int j = i;
+            while (j > 0 && tmp < arr[j - 1]) {
+                arr[j] = arr[j - 1];
+                j--;
+            }
+
+            if (j != i) {
+                arr[j] = tmp;
+            }
+
+        }
+        return arr;
+    }
+
 }

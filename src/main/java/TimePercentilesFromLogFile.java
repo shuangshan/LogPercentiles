@@ -38,7 +38,7 @@ public class TimePercentilesFromLogFile {
         List<Integer> resultList = readTimeCosts(Arrays.asList(logFileNames));
 
         // sort array
-        int[] sortedTimeCost = SortAlgorithm.bubbleSort(resultList.stream().mapToInt(i -> i).toArray());
+        int[] sortedTimeCost = SortAlgorithm.bucketSort(resultList.stream().mapToInt(i -> i).toArray());
 
         //generate the final map result
         for (Integer perc : percentage) {
