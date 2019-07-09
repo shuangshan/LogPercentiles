@@ -14,7 +14,10 @@ public class TimePercentilesFromLogFileTest {
     @Test
     public void timePercentilesTest() {
         System.out.println(rootPath);
-        String[] logFileNames = new String[]{rootPath + "/../resources/2018-13-10.log", rootPath + "/../resources/2018-12-10.log", rootPath + "/../resources/2018-11-10.log"};
+        // the rootPath for build is $WORKDIR/build/classes/java/test/
+        // the test file in $WORKDIR/build/resources/test
+        rootPath = rootPath + "../../../";
+        String[] logFileNames = new String[]{rootPath + "/resources/test/2018-13-10.log", rootPath + "/resources/test/2018-12-10.log", rootPath + "/resources/test/2018-11-10.log"};
         Integer[] pecentages = new Integer[]{90, 95, 100};
         Map<Integer, Integer> result = timePercentilesFromLogFile.timePercentiles(logFileNames, pecentages);
         assertEquals(result.get(90).intValue(), 4630);
