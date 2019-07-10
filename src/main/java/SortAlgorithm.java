@@ -18,9 +18,6 @@ public class SortAlgorithm {
 
     /**
      * bubble sort for int array, Average time complexity O(n*n), space complexity O(1)
-     *
-     * @Param {@link int[]}
-     * @Return {@link int[]}
      **/
     public static int[] bubbleSort(int[] sourceArray) {
         // copy source array.
@@ -47,9 +44,6 @@ public class SortAlgorithm {
 
     /**
      * quick sort for int array, Average time complexity O(n log(n)), space complexity O(log n)
-     *
-     * @Param {@link int[]}
-     * @Return {@link int[]}
      **/
     public static int[] quickSort(int[] sourceArray) {
         int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
@@ -86,8 +80,6 @@ public class SortAlgorithm {
 
     /**
      * @Description use JDK8 stream sorted for testing
-     * @Param {@link int[]}
-     * @Return {@link int[]}
      **/
     public static int[] streamSort(int[] sourceArray) {
         IntStream intStream = Arrays.stream(sourceArray);

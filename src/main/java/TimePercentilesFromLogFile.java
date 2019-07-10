@@ -12,8 +12,8 @@ import java.util.stream.Collectors;
 /**
  * @author chang shuangshan
  * @create 2019-07-0716:10
- * @email
- * @description Calculate time percentiles from given log file path
+ * @email 13690578@qq.com
+ * @description Calculate time percentiles from given log file path.
  */
 public class TimePercentilesFromLogFile {
 
@@ -30,7 +30,15 @@ public class TimePercentilesFromLogFile {
     public TimePercentilesFromLogFile() {
     }
 
-
+    /**
+     * Read the log file content from give log file name list, extract the time cost with regex from
+     * content. Merge the time cost number into array and sort. calculate the index by give
+     * percentage array, get the value of array index is the expect time cost number.
+     *
+     * @Param String[] the array of log file names
+     * @Param String[] the array of percentage
+     * @Return Map<Integer, Integer> the percent number and time cost number of result
+     */
     public Map<Integer, Integer> timePercentiles(String[] logFileNames, Integer[] percentage) {
 
         Map<Integer, Integer> returnMap = new HashMap<Integer, Integer>();
@@ -67,8 +75,8 @@ public class TimePercentilesFromLogFile {
     /**
      * use regex to get the last element (time cost) of log message
      *
-     * @Param {@link String} one line log message read from log file
-     * @Return {@link int} the time cost of log message
+     * @Param String one line log message read from log file
+     * @Return int the time cost of log message
      */
     public int getTimeCostFromLine(String logLine) {
         if (null == logLine || logLine.isEmpty()) {
