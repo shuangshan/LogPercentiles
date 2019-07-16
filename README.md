@@ -31,7 +31,7 @@ algorithm | time cost
 --------- | ------------- 
 bucket sort| 184ms 
 quick sort | 5ms
-stream sort| 25ms
+Timsort    | 25ms
 bubble sort| 261ms
 
 * 100,000 int number
@@ -40,7 +40,7 @@ algorithm | time cost
 --------- | ------------- 
 bucket sort| 306ms 
 quick sort | 22ms
-stream sort| 95ms
+Timsort| 95ms
 bubble sort| 22s 432ms
 
 * 1,000,000 int number
@@ -49,7 +49,7 @@ algorithm | time cost
 --------- | ------------- 
 bucket sort| 1s 67ms 
 quick sort | 193ms
-stream sort| 562ms
+Timsort    | 562ms
 bubble sort| much longer  
 
 
@@ -59,7 +59,7 @@ algorithm | time cost
 --------- | ------------- 
 bucket sort| 6s 321ms 
 quick sort | 1s 479ms
-stream sort| 990ms
+Timsort    | 990ms
 bubble sort| much longer  
 
 * 100,000,000 int number
@@ -68,7 +68,7 @@ algorithm | time cost
 --------- | ------------- 
 bucket sort| 59s 276ms 
 quick sort | 14s 912ms
-stream sort| 12s 992ms
+Timsort    | 12s 992ms
 bubble sort| much longer  
 
 
