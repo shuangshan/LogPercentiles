@@ -73,7 +73,7 @@ bubble sort| much longer
 
 
 -----------------
-from test result ***stream sort*** is a better choice, especially for big array.
+from test result ***stream(Timsort) sort*** is a better choice, especially for big array.
 
 ### Support version
 Develop/test on JDK8.
